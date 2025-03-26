@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generation</title>
+    <link rel="stylesheet" href="/static/css/styles.css">   
+</head>
+
+<body>
+    <h1>Generate Decorated Room</h1>
+
+    <input type="file" id="imageUpload" accept="image/*">
+
+    <div class="container">
+        <form id="design-form">
+            <label for="room-type">Select Room Type:</label>
+            <select id="room-type" required>
+                <option value="">--Select Room--</option>
+                <option value="Living Room">Living Room</option>
+                <option value="Master Bedroom">Master Bedroom</option>
+                <option value="Kids Bedroom">Kids Bedroom</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Dining Room">Dining Room</option>
+                <option value="Home Theatre">Home Theatre</option>
+                <option value="Study Room">Study Room</option>
+            </select>
+
+            <label for="cost-range">Select Cost Range:</label>
+            <select id="cost-range" required>
+                <option value="">--Select Cost Range--</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <h3> Low Budget : less than 3,00,000 </h3>
+            <h3> Medium Budget : 3,00,000 - 6,00,000 </h3>
+            <h3> High Budget : greater than 6,00,000 </h3>
+            <input type="text" id="promptInput" placeholder="Other additional features like modern design/minimal artfacts">
+
+            <button type="button" onclick="handleFormActions()">Get Items and Generate Image</button>
+        </form>
+
+        <table id="items-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Price Range</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="items-body">
+                <!-- Items will be injected here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="resultContainer">
+        <h2>Generated Image:</h2>
+        <img id="resultImage" src="" alt="Generated Image">
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
